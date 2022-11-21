@@ -3,6 +3,7 @@ package com.example.calculator.controller;
 import com.example.calculator.service.ServiceCalculator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,26 +22,24 @@ public class ControllerCalculator {
     }
 
     @GetMapping("/plus")
-    public String calculatorPlus(int num1, int num2) {
-        String plus = String.format("%d + %d = %d", num1, num2, num1+num2);
-        return plus;
-    }
+    public String calculatorPlus(int num1,int num2){
+        int result = serviceCalculator.calculatorPlus(num1,num2);
+        return String.format("%d + %d = %d", num1, num2, result);    }
 
     @GetMapping("/minus")
-    public String calculatorMinus(int num1, int num2) {
-        String minus = String.format("%d - %d = %d", num1, num2, num1 - num2);
-        return minus;
-    }
+    public String calculatorMinus(int num1,int num2) {
+        int result = serviceCalculator.calculatorMinus(num1,num2);
+        return String.format("%d - %d = %d", num1, num2, result);    }
 
     @GetMapping("/multiply")
-    public String calculatorMultiply(int num1, int num2) {
-        String multiply = String.format("%d * %d = %d", num1, num2, num1 * num2);
-        return multiply;
+    public String calculatorMultiply(int num1,int num2) {
+        int result = serviceCalculator.calculatorMultiply(num1,num2);
+        return String.format("%d * %d = %d", num1, num2, result);
     }
 
     @GetMapping("/divide")
-    public String calculatorDivide(int num1, int num2) {
-        String divide = String.format("%d / %d = %d", num1, num2, num1 / num2);
-        return divide;
+    public String calculatorDivide(int num1,int num2) {
+        int result = serviceCalculator.calculatorDivide(num1,num2);
+        return String.format("%d / %d = %d", num1, num2, result);
     }
 }

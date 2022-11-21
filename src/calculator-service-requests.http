@@ -1,5 +1,5 @@
 ###
-GET http://localhost:8080/calculator
+GET http://localhost:8080/calculator/
 
 ###
 GET http://localhost:8080/calculator/plus?num1=5&num2=5
